@@ -21,7 +21,7 @@ Connectable:
 ;
 
 Connector:
-    'connector' type=ConnectorType fromComponent=[Component] '->' toComponent=[Component]
+    'connector' type=ConnectorType fromComponent=[Connectable] '->' toComponent=[Connectable]
 ;
 
 ComponentType:
@@ -30,7 +30,7 @@ ComponentType:
 ;
 
 ConnectorType:
-    'RESTful' | 'db_connector' | 'gRPC' | 'MQTT' | 'SDK' | 'WebSocket' | 'ampq'  | 'CoAP' | 'gsm' | 'sqs' | 'GraphQL'
+    'RESTful' | 'db_connector' | 'gRPC' | 'MQTT' | 'SDK' | 'WebSocket' | 'amqp'  | 'CoAP' | 'gsm' | 'sqs' | 'GraphQL'
 ;
 
 HardwareDevice:
@@ -51,4 +51,3 @@ Vehicle:
 VehicleType:
     'truck' | 'tren' | 'vessel' | 'grua'
 ;
-
