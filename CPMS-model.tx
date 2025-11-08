@@ -41,6 +41,9 @@ subsystem: CPMS
         type weather_station
     }
 
+    sensor cp_entry_black_box extends Sensor {
+        type black_box
+    }
 
     connector RESTful ui -> API_Gateway
     connector RESTful API_Gateway -> ship_management_ms
@@ -76,6 +79,7 @@ subsystem: CPMS
     connector MQTT cp_truck  -> monitoring_channel 
     connector MQTT cp_entry_point_sensor  -> monitoring_channel 
     connector MQTT cp_entry_weather_station  -> monitoring_channel 
+    connector MQTT cp_entry_black_box -> monitoring_channel
 
     connector SDK request_manager_ms -> request_channel
     connector SDK request_manager_ms -> response_channel
