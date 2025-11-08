@@ -9,7 +9,7 @@ SubSystem:
 ;
 
 Element:
-    Component | Connector | HardwareDevice | Vehicle
+    Connectable | Connector | HardwareDevice | Vehicle
 ;
 
 Component:
@@ -21,16 +21,16 @@ Connectable:
 ;
 
 Connector:
-    'connector' type=ConnectorType fromComponent=[Component] '->' toComponent=[Component]
+    'connector' type=ConnectorType fromComponent=[Connectable] '->' toComponent=[Connectable]
 ;
 
 ComponentType:
     'frontend' | 'backend' | 'database' | 'channel' | 'loadBalancer' | 'fileStorage' | 'apiGateway'
-    | 'sensor' | 'vehicle' | 'contenedor' | 'eventBus' | 'proxy' | 'interface'
+    | 'sensor' | 'vehicle' | 'contenedor' | 'eventBus' | 'proxy' | 'interface' | 'queue'
 ;
 
 ConnectorType:
-    'RESTful' | 'db_connector' | 'gRPC' | 'MQTT' | 'SDK' | 'WebSocket' | 'ampq'  | 'CoAP' | 'gsm' | 'sqs' | 'GraphQL'
+    'RESTful' | 'dbConnector' | 'gRPC' | 'MQTT' | 'SDK' | 'WebSocket' | 'amqp'  | 'CoAP' | 'gsm' | 'sqs' | 'GraphQL' | 'TCP/IP' | 'Bus'
 ;
 
 HardwareDevice:
